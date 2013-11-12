@@ -1,5 +1,5 @@
 package aere_commons.pokefenn;
 
-public class ClientProxy {
+public class ClientProxy extends CommonProxy {
 
 }
