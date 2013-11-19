@@ -16,7 +16,7 @@ import net.minecraftforge.oredict.OreDictionary;
 import java.io.File;
 
 
-@Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION)
+@Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION, dependencies = "after:IndustrialCraft 2;")
 @NetworkMod(channels = { Reference.CHANNEL_NAME }, clientSideRequired = true, serverSideRequired = false, packetHandler = PacketHandler.class)
 public class Aere {
 
@@ -36,7 +36,7 @@ public class Aere {
             CreativeTabs.getNextID(), Reference.MOD_NAME);
     
     public static Item plateBrass;
-    //public static Item 
+    public static Item itemCasingBrass;
 
 
     @EventHandler
@@ -55,6 +55,7 @@ public class Aere {
     	
     	
     	plateBrass = new ItemPlateBrass(Config.PLATEBRASS);
+        //itemCasingBrass = new ItemCasingBrass(Config.ITEMCASINGBRASS);
     	
     	
         
@@ -65,8 +66,11 @@ public class Aere {
     public void init(FMLInitializationEvent event) {
     	
     	OreDictionary.registerOre("plateBrass", new ItemStack(plateBrass));
-    	OreDictionary.registerOre("plateBronze", new ItemStack(plateBrass));
-        
+    	//OreDictionary.registerOre("plateBronze", new ItemStack(plateBrass));
+        WeirdIC2APIStuff.init();
+        Recipes.init();
+
+
     }
     
     

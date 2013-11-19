@@ -1,11 +1,10 @@
 package aere_commons.pokefenn;
 
-import java.io.File;
-import java.util.logging.Level;
-
-
 import cpw.mods.fml.common.FMLLog;
 import net.minecraftforge.common.Configuration;
+
+import java.io.File;
+import java.util.logging.Level;
 
 public class Config {
 	
@@ -15,6 +14,9 @@ public class Config {
 
     public static int PLATEBRASS;
     public static int PLATEBRASS_DEFAULT = 28000;
+
+    public static int ITEMCASINGBRASS;
+    public static int ITEMCASINGBRASS_DEFAULT = 28001;
 	
 	public static void init(File configFile) {
         
@@ -24,7 +26,7 @@ public class Config {
         	
         	
         	PLATEBRASS = configuration.getItem("plateBrass", PLATEBRASS_DEFAULT).getInt(PLATEBRASS_DEFAULT);
-        	
+        	//ITEMCASINGBRASS = configuration.getItem("itemCasingBrass", ITEMCASINGBRASS_DEFAULT).getInt(ITEMCASINGBRASS_DEFAULT);
         	
         	
         	
